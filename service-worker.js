@@ -20,7 +20,7 @@ self.addEventListener('fetch', function(e) {
   console.log(url.pathname);
 
   //
-  if (url.pathname === 'prueba.svg') {
+  if (url.pathname === '/main/res.txt') {
     console.log('SW Prueba');
     event.respondWith('');
   }
