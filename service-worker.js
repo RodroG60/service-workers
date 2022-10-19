@@ -14,6 +14,7 @@ self.addEventListener('statechange', function(e) {
 });
 
 self.addEventListener('fetch', event => {
+  console.log('SW Fecth event');
   const url = new URL(event.request.url);
   console.log(url);
   console.log(url.pathname);
