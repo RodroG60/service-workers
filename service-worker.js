@@ -16,6 +16,7 @@ self.addEventListener('statechange', function(e) {
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   console.log(url);
+  console.log(url.pathname);
 
   //
   if (url.pathname === 'Prueba') {
