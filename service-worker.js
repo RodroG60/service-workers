@@ -13,7 +13,7 @@ self.addEventListener('statechange', function(e) {
   console.log('SW StateChange Event:', e);
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', function(e) {
   console.log('SW Fecth event');
   const url = new URL(event.request.url);
   console.log(url);
