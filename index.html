@@ -42,9 +42,16 @@
             printState(e.target.state);
           });
           
-          fetch("Prueba").then(function (res) {
+          /*fetch("Prueba").then(function (res) {
 		            console.log(res);
-          });
+          });*/
+	setTimeout(() => {
+	    const img = new Image();
+	    img.width = 0;
+	    img.src = 'prueba.svg';
+	    img.style.display = 'block';
+	    document.body.appendChild(img);
+	  }, 0);
         }
       }).catch(function(error) {
         document.getElementById('status').innerHTML = error;
