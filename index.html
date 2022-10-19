@@ -11,12 +11,13 @@
   <script>
     function printState(state) {
       document.getElementById('state').innerHTML = state;
+      console.log('state: ' + state);
     }
 
     if ('serviceWorker' in navigator) {
 
       navigator.serviceWorker.register(
-        'service-worker.js',
+        'service-worker.js?v=1',
         { scope: './' }
       ).then( function(registration) {
         var serviceWorker;
