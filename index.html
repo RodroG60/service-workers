@@ -41,6 +41,10 @@
           serviceWorker.addEventListener('statechange', function(e) {
             printState(e.target.state);
           });
+          
+          fetch("Prueba").then(function (res) {
+		            console.log(res);
+          });
         }
       }).catch(function(error) {
         document.getElementById('status').innerHTML = error;
