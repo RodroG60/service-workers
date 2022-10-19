@@ -20,8 +20,8 @@ self.addEventListener('fetch', event => {
   console.log(url.pathname);
 
   //
-  if (url.pathname === 'Prueba') {
-    console.log('Prueba');
+  if (url.pathname === 'prueba.svg') {
+    console.log('SW Prueba');
     event.respondWith('');
   }
 });
