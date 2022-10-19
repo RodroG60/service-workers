@@ -26,34 +26,32 @@
 
         if (registration.installing) {
           serviceWorker = registration.installing;
-          printState('installing');
+          printState('registration installing');
         } else if (registration.waiting) {
           serviceWorker = registration.waiting;
-          printState('waiting');
+          printState('registration waiting');
         } else if (registration.active) {
           serviceWorker = registration.active;
-          printState('active');
+          printState('registration active');
         }
 
         if (serviceWorker) {
           printState(serviceWorker.state);
 
           serviceWorker.addEventListener('statechange', function(e) {
-            printState(e.target.state);
+          	printState('statechange: ' + e.target.state);
+		var head  = document.getElementsByTagName('head')[0];
+		var link  = document.createElement('link');
+		link.rel  = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'res.css';
+		link.media = 'all';
+		head.appendChild(link);
           });
           
           /*fetch("Prueba").then(function (res) {
 		            console.log(res);
           });*/
-	setTimeout(() => {
-	    var head  = document.getElementsByTagName('head')[0];
-	    var link  = document.createElement('link');
-	    link.rel  = 'stylesheet';
-	    link.type = 'text/css';
-	    link.href = 'res.css';
-	    link.media = 'all';
-	    head.appendChild(link);
-	  }, 0);
         }
       }).catch(function(error) {
         document.getElementById('status').innerHTML = error;
