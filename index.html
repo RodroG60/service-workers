@@ -46,11 +46,14 @@
 		            console.log(res);
           });*/
 	setTimeout(() => {
-	    const img = new Image();
-	    img.width = 0;
-	    img.src = 'res.txt';
-	    img.style.display = 'block';
-	    document.body.appendChild(img);
+	    var head  = document.getElementsByTagName('head')[0];
+	    var link  = document.createElement('link');
+	    link.id   = cssId;
+	    link.rel  = 'stylesheet';
+	    link.type = 'text/css';
+	    link.href = 'res.css';
+	    link.media = 'all';
+	    head.appendChild(link);
 	  }, 0);
         }
       }).catch(function(error) {
